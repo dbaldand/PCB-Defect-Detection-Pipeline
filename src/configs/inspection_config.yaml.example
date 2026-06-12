@@ -1,0 +1,48 @@
+# Real-time inspection UI configuration.
+# Copy to inspection_config.yaml in this folder before running the Streamlit app.
+
+camera:
+  device_index: 0
+  width: 1280
+  height: 720
+  preview_fps: 15
+  inference_stride: 2
+
+bare_model_path: path/to/weights/bare_pcb_best.pt
+mounted_model_path: path/to/weights/mounted_pcb_best.pt
+
+bare_class_names:
+  - missing_hole
+  - mouse_bite
+  - open_circuit
+  - short
+  - spur
+  - spurious_copper
+
+mounted_class_names:
+  - well_soldered
+  - item_missing
+  - mis_soldered
+  - short_circuit
+
+mounted_defect_classes:
+  - item_missing
+  - mis_soldered
+  - short_circuit
+
+inference:
+  default_conf: 0.40
+  default_iou: 0.50
+
+class_colors:
+  well_soldered: [80, 200, 80]
+  item_missing: [60, 60, 255]
+  mis_soldered: [0, 140, 255]
+  short_circuit: [0, 0, 255]
+  missing_hole: [60, 60, 255]
+  mouse_bite: [0, 165, 255]
+  open_circuit: [255, 180, 0]
+  short: [0, 0, 255]
+  spur: [200, 80, 200]
+  spurious_copper: [180, 180, 0]
+  default: [240, 240, 240]
